@@ -69,7 +69,7 @@ const RegisterModal = () => {
 			<Input
 				id='password'
 				label='Password'
-        type = "password"
+				type='password'
 				disabled={isLoading}
 				register={register}
 				errors={errors}
@@ -78,17 +78,30 @@ const RegisterModal = () => {
 		</div>
 	);
 
-  const footerContent = (
-    <div className="flex flex-col gap-4 mt-3">
-         <hr/>
-         <Button 
-            outline
-            label="Continue with google"
-            icon={FcGoogle}
-            onClick={() => {}}
-         />
-    </div>
-  )
+	const footerContent = (
+		<div className='flex flex-col gap-4 mt-3'>
+			<hr />
+			<Button
+				outline
+				label='Continue with google'
+				icon={FcGoogle}
+				onClick={() => {}}
+			/>
+			<Button
+				outline
+				label='Continue with github'
+				icon={AiFillGithub}
+				onClick={() => {}}
+			/>
+			<div className='justify-center text-center text-neutral-500 text-center mt-4 font-light'>
+				<div className="flex flex-row items-center gap-2">
+					<div>Already have an account?</div>
+					<div onClick={registerModal.onClose} className="text-neutral-800 cursor-pointer hover:underline">Login</div>
+				</div>
+			</div>
+
+		</div>
+	);
 	return (
 		<Modal
 			disabled={isLoading}

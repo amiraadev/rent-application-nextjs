@@ -22,11 +22,11 @@ export default async function getCurrentUser() {
 			},
 		});
 
-		if (CurrentUser) {
+		if (!CurrentUser) {
 			return null;
 		}
 
-        return CurrentUser;
+		return CurrentUser;
 	} catch (error) {
 		return null;
 	}

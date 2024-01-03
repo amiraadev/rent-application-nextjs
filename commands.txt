@@ -1,4 +1,0 @@
-npm i next-auth @prisma/client @next-auth/prisma-adapter
-npm i bcrypt
-npm install -D @types/bcrypt
-

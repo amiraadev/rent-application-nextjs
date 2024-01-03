@@ -14,17 +14,26 @@ interface UserMenuProps {
 	currentUser?: SafeUser | null;
 }
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
+	const [isOpen, setIsOpen] = useState(Boolean);
+
 	const loginModal = useLoginModal();
 	const registerModal = useRegisterModal();
-	const [isOpen, setIsOpen] = useState(Boolean);
+
 	const toggle1open = useCallback(() => {
 		setIsOpen((value) => !value);
 	}, []);
 
+	const onRent = useCallback(() =>{
+		if (!currentUser){
+			return loginModal.onOpen()
+		}
+		// Open Rent model
+	}, [currentUser, loginModal]);
+
 	return (
 		<div className='flex flex-row items-center gap-3'>
 			<div
-				onClick={() => {}}
+				onClick={onRent}
 				className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'>
 				Airbnb your home
 			</div>

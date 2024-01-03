@@ -1,5 +1,5 @@
 /** @format */
-
+"use client"
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useCallback } from "react";
 import { IconType } from "react-icons";

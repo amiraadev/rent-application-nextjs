@@ -7,8 +7,10 @@ import React from "react";
 
  const Logo = () => {
 	const router = useRouter();
+
 	return (
 		<Image
+		onClick={() => router.push('/')}
 			src='/images/logo.png'
 			alt='logo'
 			height='100'

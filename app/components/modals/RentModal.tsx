@@ -9,6 +9,7 @@ import CategoryInput from "../inputs/CategoryInput";
 import { FieldValues, useForm } from "react-hook-form";
 import CountrySlect from "../inputs/CountrySelect";
 import CountrySelect from "../inputs/CountrySelect";
+import Map from "../Map";
 
 enum STEPS {
 	CATEGORY = 0,
@@ -45,6 +46,7 @@ const RentModal = () => {
 	});
 
 	const category = watch("category");
+	const location = watch("location");
 
 	const setCustomValue = (id: string, value: any) => {
 		setValue(id, value, {
@@ -112,7 +114,11 @@ const RentModal = () => {
                    title="where is your place located ? "
                    subtitle="help guests find you"
                 />
-			<CountrySelect />
+			<CountrySelect
+			  value={location}
+			  onChange={(value) =>setCustomValue("location",value)}
+			/>
+			<Map />
         </div>;
 	}
 	return (

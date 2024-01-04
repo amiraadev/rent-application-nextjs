@@ -8,3 +8,10 @@ body,
 :root {
   height:100%;
 }
+
+.leaflet-bottom,
+.leaflet-bottom,
+.leaflet-pange,
+.leaflet-top {
+  z-index:0 !important;
+}

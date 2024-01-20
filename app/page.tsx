@@ -1,8 +1,17 @@
 import Image from 'next/image'
 import Container from './components/Container'
 import ClientOnly from './components/ClientOnly'
+import EmptyState from './components/EmptyState'
 
 export default function Home() {
+  const isEmpty = true
+  if(isEmpty) {
+    return(
+      <ClientOnly >
+        <EmptyState />
+      </ClientOnly>
+    )
+  }
   return (
     <ClientOnly >
       <Container >

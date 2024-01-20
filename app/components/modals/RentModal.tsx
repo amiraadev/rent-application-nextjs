@@ -91,6 +91,11 @@ const RentModal = () => {
 		   setStep(STEPS.CATEGORY);
 		   rentModal.onClose()
 		})
+		.catch(() =>{
+			toast.error('Something went wrong.')
+		}).finally(() => {
+			setIsLoading(false)
+		})
 	}
 
 	const actionLabel = useMemo(() => {
@@ -257,7 +262,7 @@ const RentModal = () => {
 		<Modal
 			isOpen={rentModal.isOpen}
 			onClose={rentModal.onClose}
-			onSubmit={onNext}
+			onSubmit={handleSubmit(onSubmit)}
 			actionLabel={actionLabel}
 			secondaryActionLabel={secondaryActionLabel}
 			secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}

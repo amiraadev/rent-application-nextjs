@@ -207,7 +207,7 @@ const RentModal = () => {
 		  <div className="flex flex-col gap-8">
 			<Heading
 			  title="How would you describe your place?"
-			  subtitle="Short qnd sweet works best !"
+			  subtitle="Short and sweet works best !"
 			/>
 			<Input
 			   id='title'
@@ -246,15 +246,7 @@ const RentModal = () => {
 			   errors={errors}
 			   required
 			/>
-			<hr/>
-			<Input
-			   id='description'
-			   label='Description'
-			   disabled={isLoading}
-			   register={register}
-			   errors={errors}
-			   required
-			/>
+			
 		  </div>
 		);
 	  }

@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
 import axios from "axios";
 import toast from "react-hot-toast";
+import ListingReservation from "@/app/components/listings/ListingReservation";
 
 const initialDateRange = {
 	startDate: new Date(),

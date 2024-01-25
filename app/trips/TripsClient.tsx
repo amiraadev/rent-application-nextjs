@@ -6,6 +6,7 @@ import Heading from '../components/Heading';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import ListingCard from '../components/listings/ListingCard';
 
 
 interface TripsClientProps {
@@ -33,7 +34,7 @@ const TripsClient:React.FC<TripsClientProps> = ({
             .finally(() =>{
                 setDeletingId('')
             })
-    },[])
+    },[router])
   return (
     <Container>
         <Heading 
@@ -50,7 +51,18 @@ const TripsClient:React.FC<TripsClientProps> = ({
             xl:grid-cols-5 
             gap-8
             '>
-
+              {reservations.map((reservation) => (
+                <ListingCard 
+                  key={reservation.id}
+                  data={reservation.listing}
+                  reservation={reservation}
+                  actionId={reservation.id}
+                  onAction={onCancel}
+                  disabled={deletingId === reservation.id}
+                  actionLabel='Cancel reservation'
+                  currentUser={currentUser}
+                />
+              ))}
             </div>
     </Container>
   )

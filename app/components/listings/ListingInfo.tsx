@@ -6,6 +6,12 @@ import React from 'react'
 import { IconType } from 'react-icons'
 import Avatar from '../Avatar'
 import ListingCategory from './ListingCategory'
+import dynamic from 'next/dynamic'
+
+
+const Map = dynamic(() => import('../Map'),{
+    ssr:false
+})
 
 interface ListingInfoProps {
     user:SafeUser,
@@ -56,6 +62,10 @@ locationValue,
                 description={category.description}
                 />
         )}
+        <hr/>
+        <div className="text-lg font-light text-neutral-500">{description}</div>
+        <hr />
+        <Map center={coordinates} />
     </div>
   )
 }

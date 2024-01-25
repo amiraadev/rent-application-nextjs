@@ -9,6 +9,12 @@ import Container from "@/app/components/Container";
 import { ListingHead } from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 
+const initialDateRange={
+	startDate: new Date(),
+	endDate: new Date(),
+	key:"selection"
+}
+
 interface ListingClientProps {
 	reservations?: Reservation[];
 	listing: SafeListing & {
@@ -18,6 +24,7 @@ interface ListingClientProps {
 }
 const ListingClient: React.FC<ListingClientProps> = ({
 	listing,
+	reservations = [],
 	currentUser,
 }) => {
 	const category = useMemo(() => {
@@ -38,7 +45,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
                     <div className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6">
                         <ListingInfo 
                           user= {listing.user}
-                          category= {listing.category}
+                          category= {category}
                           description= {listing.description}
                           roomCount= {listing.roomCount}
                           guestCount= {listing.guestCount}

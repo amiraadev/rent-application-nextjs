@@ -1,5 +1,5 @@
 /** @format */
-
+"use client"
 import axios from "axios";
 import React, { useCallback, useState } from "react";
 import toast from "react-hot-toast";
@@ -10,11 +10,11 @@ import ListingCard from "../components/listings/ListingCard";
 import { useRouter } from "next/navigation";
 
 interface ReservationsClientProps {
-	reservation: SafeReservation[];
+	reservations: SafeReservation[];
 	currentUser?: SafeUser | null;
 }
 const ReservationsClient: React.FC<ReservationsClientProps> = ({
-	reservation,
+	reservations,
 	currentUser,
 }) => {
 	const router = useRouter();
@@ -41,8 +41,35 @@ const ReservationsClient: React.FC<ReservationsClientProps> = ({
 	return (
 		<Container>
 			<Heading title='Reservations' subtitle='Booking on your properties' />
+            <div className="
+                 mt-10 
+                 grid 
+                 grid-cols-1 
+                 sm:grid-cols-2
+                 md:grid-cols-3
+                 lg:grid-cols-4
+                 xl:grid-cols-5
+                 2xl:grid-cols-6
+                 gap-8
+                 "
+                 >
+                    {reservations.map((reservation) => (
+                        <ListingCard 
+                            key={reservation.id}  
+                            data={reservation.listing}  
+                            reservation={reservation}  
+                            actionId={reservation.id}  
+                            onAction={onCancel}
+                            disabled={deletingId === reservation.id}
+                            actionLabel="Cancel guest reservation"
+                            currentUser={currentUser}
+                            />
+                    )
+                    )}
+                 </div>
 		</Container>
 	);
 };
+
 
 export default ReservationsClient;

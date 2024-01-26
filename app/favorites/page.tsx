@@ -3,6 +3,7 @@ import getListingById from "@/app/actions/getListingById";
 import ClientOnly from "@/app/components/ClientOnly";
 import EmptyState from "@/app/components/EmptyState";
 import getReservations from "@/app/actions/getReservations";
+import getFavoriteListings from "../actions/getFavoriteListings";
 
 const ListingPage = async () => {
     return(
@@ -14,3 +15,5 @@ const ListingPage = async () => {
         </ClientOnly>
     )
 }
+
+export default ListingPage;

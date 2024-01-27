@@ -78,41 +78,34 @@
 // 	}
 // }
 
-
-// Import necessary modules
 import prisma from "@/app/libs/prismadb";
 
-// Define the interface for listing parameters
 export interface IListingsParams {
-  userId?: string;
-  guestCount?: number;
+  category?: string;
   roomCount?: number;
   bathroomCount?: number;
+  guestCount?: number;
+  locationValue?: string;
   startDate?: string;
   endDate?: string;
-  locationValue?: string;
-  category?: string;
 }
 
-// Function to fetch listings
 export default async function getListings(params: IListingsParams) {
   try {
-    // Destructure parameters
     const {
-      userId,
-      guestCount,
+      category,
       roomCount,
       bathroomCount,
+      guestCount,
+      locationValue,
       startDate,
       endDate,
-      locationValue,
-      category,
     } = params;
 
-    // Build a static query object
+    // Define a static query object
     const query: any = {};
 
-    // Add static conditions to the query
+    // Apply static conditions to the query
     if (category) {
       query.category = category;
     }
@@ -129,7 +122,7 @@ export default async function getListings(params: IListingsParams) {
       query.locationValue = locationValue;
     }
 
-    // If startDate and endDate are provided, add static conditions for reservations
+    // If both startDate and endDate are provided, apply static conditions for reservations
     if (startDate && endDate) {
       query.reservations = {
         none: {
@@ -155,17 +148,14 @@ export default async function getListings(params: IListingsParams) {
       },
     });
 
-    // Map and format the listings
+    // Format and return the listings
     const safeListings = listings.map((listing) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
     }));
 
-    // Return the formatted listings
     return safeListings;
   } catch (error: any) {
-    // Handle errors
     throw new Error(error);
   }
 }
-

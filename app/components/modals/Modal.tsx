@@ -28,16 +28,16 @@ const Modal = ({
 	secondaryAction,
 	secondaryActionLabel,
 }: ModalProps) => {
-	const [showModal, setshowModal] = useState(isOpen);
+	const [showModal, setShowModal] = useState(isOpen);
 	useEffect(() => {
-		setshowModal(isOpen);
+		setShowModal(isOpen);
 	}, [isOpen, onClose]);
 
 	const handleClose = useCallback(() => {
 		if (disabled) {
 			return;
 		}
-		setshowModal(false);
+		setShowModal(false);
 		setTimeout(() => {
 			onClose();
 		}, 300);

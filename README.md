@@ -3,7 +3,7 @@
 
 ## Demo
 
-Check out the live demo [here]https://renting-app-nextjs.vercel.app/.
+Check out the live demo here : https://renting-app-nextjs.vercel.app/.
 
 ## Overview
 
@@ -41,7 +41,7 @@ This repository contains the source code for a Full Stack Airbnb Clone built wit
 
 ## Prerequisites
 
-**Node version 14.x**
+**Node version 20.x**
 
 ## Cloning the repository
 ```shell

@@ -14,16 +14,16 @@ interface HomeProps {
 
 const Home = async ({ searchParams }: HomeProps) => {
 	
-	let listings: any[]; 
-	try {
-	  listings = searchParams ? await getListings(searchParams) : await getListings({});
-	} catch (error) {
-	  console.error("Error fetching listings:", error);
-	  // Handle the error as needed
-	  listings = [];
-	}
 
-  const currentUser = await getCurrentUser();
+	const currentUser = await getCurrentUser();
+	let listings = await getListings({});
+	if(Object.keys({ searchParams }).length !== 0){
+		listings = await getListings(searchParams);
+	  }
+
+//   const listings = await getListings({});
+  console.log(listings);
+  
 
   if (listings.length === 0) {
     return (

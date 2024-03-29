@@ -7,7 +7,7 @@ Check out the live demo here : https://renting-app-nextjs.vercel.app/.
 
 ## Overview
 
-This repository contains the source code for a Full Stack Airbnb Clone built with Next.js 14, featuring the App Router, React, Tailwind, Prisma, MongoDB, and NextAuth.
+This repository contains the source code for a Full Stack Rent Application built with Next.js 14, featuring the App Router, React, Tailwind, Prisma, MongoDB, and NextAuth.
 
 
 ## Features

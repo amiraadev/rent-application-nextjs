@@ -1,5 +1,5 @@
 # Full Stack Rent Application with Next.js 14 App Router: React, Tailwind, Prisma, MongoDB, NextAuth 2023
-![Screenshot](/public/rent-app-screen-shot.png)
+![Screenshot](/public/rent-app-screen-shot1.png)
 
 ## Demo
 

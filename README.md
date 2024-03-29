@@ -1,5 +1,5 @@
-# Full Stack Airbnb Clone with Next.js 14 App Router: React, Tailwind, Prisma, MongoDB, NextAuth 2023
-![Screenshot](/public/airbnb-screen.png)
+# Full Stack Rent Application with Next.js 14 App Router: React, Tailwind, Prisma, MongoDB, NextAuth 2023
+![Screenshot](/public/rent-app-screen-shot.png)
 
 ## Demo
 
@@ -36,22 +36,10 @@ This repository contains the source code for a Full Stack Airbnb Clone built wit
   - Share a URL with predefined filters for category, location, and date range
 - Demonstrates how to write POST and DELETE routes in route handlers (app/api)
 - Fetching data in server react components by directly accessing the database (WITHOUT API!)
-- Handling files like error.tsx and loading.tsx, new Next 13 templating files for unified loading and error handling
+- Handling files like error.tsx and loading.tsx, new Next 14 templating files for unified loading and error handling
 - Managing relations between server and child components
 
-## Prerequisites
 
-**Node version 20.x**
-
-## Cloning the repository
-```shell
-git clone https://github.com/AntonioErdeljac/next13-airbnb-clone.git
-```
-
-## Install packages
-```bash
-npm i 
-```
 
 ## Setup .env file
 Create a .env file in the root directory and add the following configuration:

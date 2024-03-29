@@ -16,8 +16,8 @@ const Navbar:React.FC<NavbarProps> = ({currentUser}) => {
 	console.log(currentUser);
 	
 	return (
-		<div className='fixed w-full bg-white shadow-sm z-10'>
-			<div className='py-4 border-b-[1px]'>
+		<div className='fixed w-full bg-slate-900 shadow-sm z-10 text-slate-300'>
+			<div className='py-4 border-b-[1px] border-slate-700'>
 				<Container>
 					<div className='flex flex-row items-center justify-between gap-3 md:gap-0 '>
                        <Logo/> 

@@ -128,7 +128,7 @@ const SearchModal = () => {
         onChange={(value) => 
           setLocation(value as CountrySelectValue)} 
       />
-      <hr />
+      <hr className='border-[1px] border-slate-600'/>
       <Map center={location?.latlng} />
     </div>
   )
@@ -161,21 +161,21 @@ const SearchModal = () => {
           title="Guests" 
           subtitle="How many guests are coming?"
         />
-        <hr />
+        <hr className='border-[1px] border-slate-600'/>
         <Counter 
           onChange={(value) => setRoomCount(value)}
           value={roomCount}
           title="Rooms" 
           subtitle="How many rooms do you need?"
         />        
-        <hr />
+        <hr  className='border-[1px] border-slate-600'/>
         <Counter 
           onChange={(value) => {
             setBathroomCount(value)
           }}
           value={bathroomCount}
           title="Bathrooms"
-          subtitle="How many bahtrooms do you need?"
+          subtitle="How many bathrooms do you need?"
         />
       </div>
     )

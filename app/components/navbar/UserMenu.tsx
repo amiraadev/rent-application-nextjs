@@ -53,12 +53,12 @@ const UserMenu: React.FC<UserMenuProps> = ({
             py-3 
             px-4 
             rounded-full 
-            hover:bg-neutral-100 
+            hover:bg-slate-600 
             transition 
             cursor-pointer
           "
         >
-          Airbnb your home
+          {currentUser?.name}
         </div>
         <div 
         onClick={toggleOpen}
@@ -67,7 +67,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
           md:py-1
           md:px-2
           border-[1px] 
-          border-neutral-200 
+        border-slate-600 
           flex 
           flex-row 
           items-center 
@@ -93,7 +93,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
             shadow-md
             w-[40vw]
             md:w-3/4 
-            bg-white 
+            bg-slate-800
+            text-slate-300 
+            border-[1px]
+             border-slate-600
             overflow-hidden 
             right-0 
             top-12 
@@ -120,7 +123,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   onClick={() => router.push('/properties')}
                 />
                 <MenuItem 
-                  label="Airbnb your home" 
+                  label="Add property" 
                   onClick={rentModal.onOpen}
                 />
                 <hr />

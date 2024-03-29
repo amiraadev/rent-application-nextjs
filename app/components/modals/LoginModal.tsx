@@ -84,7 +84,7 @@ const LoginModal = () => {
 
 	const footerContent = (
 		<div className='flex flex-col gap-4 mt-3'>
-			<hr />
+			<hr className='border-b-[2px] border-slate-700'/>
 			<Button
 				outline
 				label='Continue with google'
@@ -101,12 +101,12 @@ const LoginModal = () => {
 					signIn("github");
 				}}
 			/>
-			<div className='justify-center text-center text-neutral-500 text-center mt-4 font-light'>
+			<div className='justify-center text-center text-slate-300  mt-4 font-light'>
 				<div className='flex flex-row items-center gap-2'>
-					<div>First Time using Airbnb?</div>
+					<div>First Time here?</div>
 					<div
 						onClick={Toggle}
-						className='text-neutral-800 cursor-pointer hover:underline'>
+						className='text-slate-500 cursor-pointer hover:underline'>
 						Create an account
 					</div>
 				</div>

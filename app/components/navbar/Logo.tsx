@@ -11,11 +11,12 @@ import React from "react";
 	return (
 		<Image
 		onClick={() => router.push('/')}
-			src='/images/logo.png'
+			// src='/images/logo-ftw.png'
+			src='/images/logo-yellow.png'
 			alt='logo'
-			height='100'
-			width='100'
-			className='hidden md:block cursor-pointer'
+			height='110'
+			width='110'
+			className='hidden md:block cursor-pointer hover:scale-105'
 		/>
 	);
 };
